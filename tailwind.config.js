@@ -7,6 +7,9 @@ export default {
   ],
   theme: {
     extend: {},
+    colors: {
+      "darkTheme": "#1e282d",
+    }
   },
   plugins: [
     require('flowbite/plugin'),

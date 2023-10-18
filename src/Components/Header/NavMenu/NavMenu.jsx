@@ -14,7 +14,7 @@ const NavMenu = () => {
     console.log(toggleLogo);
   }
   return (
-    <Navbar fluid rounded className='dark:bg-black rounded-none'>
+    <Navbar fluid rounded className='rounded-none'>
       <Navbar.Brand href="/">        
         {
           toggleLogo ? <img src="/monaem-light.svg" className="mr-3 h-6 sm:h-9" alt="monaem Logo" /> : <img src="/monaem-dark.svg" className="mr-3 h-6 sm:h-9" alt="monaem Logo" />
@@ -53,10 +53,11 @@ const NavMenu = () => {
         <Navbar.Link href="#" active>
           Home
         </Navbar.Link>
-        <Navbar.Link href="#">About</Navbar.Link>
-        <Navbar.Link href="#">Services</Navbar.Link>
-        <Navbar.Link href="#">Pricing</Navbar.Link>
+        <Navbar.Link href="#">Shop</Navbar.Link>
+        <Navbar.Link href="#">Blog</Navbar.Link>
         <Navbar.Link href="#">Contact</Navbar.Link>
+        <Navbar.Link href="#">My Cart</Navbar.Link>
+        <Navbar.Link href="#">Add Product</Navbar.Link>
       </Navbar.Collapse>
 
     </Navbar>

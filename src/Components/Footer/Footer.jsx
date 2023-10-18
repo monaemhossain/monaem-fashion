@@ -4,8 +4,8 @@ import { Footer } from 'flowbite-react';
 
 const SiteFooter = () => {
   return (
-    <Footer container>
-      <div className="w-full">
+    <Footer container className='rounded-none'>
+      <div className="w-full dark:bg-darkTheme">
         <div className="grid max-w-screen-xl mx-auto justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
           <div>
             <Footer.Brand
