@@ -14,7 +14,7 @@ const NavMenu = () => {
     console.log(toggleLogo);
   }
   return (
-    <Navbar fluid rounded className='rounded-none'>
+    <Navbar fluid>
       <Navbar.Brand href="/">        
         {
           toggleLogo ? <img src="/monaem-light.svg" className="mr-3 h-6 sm:h-9" alt="monaem Logo" /> : <img src="/monaem-dark.svg" className="mr-3 h-6 sm:h-9" alt="monaem Logo" />
@@ -50,7 +50,7 @@ const NavMenu = () => {
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>
-        <Navbar.Link href="#" active>
+        <Navbar.Link href="#">
           Home
         </Navbar.Link>
         <Navbar.Link href="#">Shop</Navbar.Link>

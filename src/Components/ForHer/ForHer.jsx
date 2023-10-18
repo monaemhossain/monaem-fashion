@@ -1,8 +1,8 @@
 const ForHer = () => {
     return (
-        <div className="grid grid-cols-3 gap-6 max-w-screen-xl mx-auto py-24">
-            <div className="col-span-1">
-                <h1 className="text-6xl text-center pb-5">#ForHer</h1>
+        <div className="grid md:grid-cols-3 grid-cols-1 md:gap-6 justify-center items-center max-w-screen-xl mx-auto py-24">
+            <div className="col-span-1 max-md:mb-4">
+                <h1 className="text-6xl text-center pb-5 dark:text-white">#ForHer</h1>
                 <div className="h-full overflow-hidden">
                     <img src="https://cdn.pixabay.com/photo/2016/07/28/10/45/woman-1547507_1280.jpg" alt="women image" className="" />
                 </div>
