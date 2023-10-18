@@ -3,6 +3,7 @@
 import { Dropdown, Navbar, Avatar, DarkThemeToggle, Flowbite } from 'flowbite-react';
 import { } from "flowbite-react";
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 const NavMenu = () => {
   const [toggleLogo, setToggleLogo] = useState(false);
@@ -50,14 +51,12 @@ const NavMenu = () => {
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>
-        <Navbar.Link href="#">
-          Home
-        </Navbar.Link>
-        <Navbar.Link href="#">Shop</Navbar.Link>
-        <Navbar.Link href="#">Blog</Navbar.Link>
-        <Navbar.Link href="#">Contact</Navbar.Link>
-        <Navbar.Link href="#">My Cart</Navbar.Link>
-        <Navbar.Link href="#">Add Product</Navbar.Link>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/shop">Shop</NavLink>
+        <NavLink to="/blog">Blog</NavLink>
+        <NavLink to="/contact">Contact</NavLink>
+        <NavLink to="/my-cart">My Cart</NavLink>
+        <NavLink to="/add-product">Add Product</NavLink>
       </Navbar.Collapse>
 
     </Navbar>
