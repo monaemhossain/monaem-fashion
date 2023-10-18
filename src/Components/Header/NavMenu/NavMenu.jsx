@@ -1,15 +1,34 @@
 'use client';
 
-import { Dropdown, Navbar, Avatar } from 'flowbite-react';
+import { Dropdown, Navbar, Avatar, DarkThemeToggle, Flowbite } from 'flowbite-react';
+import { } from "flowbite-react";
+import { useState } from 'react';
 
-export default function NavMenu() {
+const NavMenu = () => {
+  const [toggleLogo, setToggleLogo] = useState(false);
+
+  const handleDarkMode = () => {
+   
+      setToggleLogo((current) => !current)
+   
+    console.log(toggleLogo);
+  }
   return (
-    <Navbar fluid rounded>
-      <Navbar.Brand href="https://flowbite-react.com">
-        <img src="/favicon.svg" className="mr-3 h-6 sm:h-9" alt="Flowbite React Logo" />
-        <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite React</span>
+    <Navbar fluid rounded className='dark:bg-black rounded-none'>
+      <Navbar.Brand href="/">        
+        {
+          toggleLogo ? <img src="/monaem-light.svg" className="mr-3 h-6 sm:h-9" alt="monaem Logo" /> : <img src="/monaem-dark.svg" className="mr-3 h-6 sm:h-9" alt="monaem Logo" />
+        }
       </Navbar.Brand>
+
+
       <div className="flex md:order-2">
+
+        <div onClick={handleDarkMode}>
+          <Flowbite>
+            <DarkThemeToggle className='mr-2' />
+          </Flowbite>
+        </div>
         <Dropdown
           arrowIcon={false}
           inline
@@ -17,6 +36,7 @@ export default function NavMenu() {
             <Avatar alt="User settings" img="https://flowbite.com/docs/images/people/profile-picture-5.jpg" rounded />
           }
         >
+
           <Dropdown.Header>
             <span className="block text-sm">Bonnie Green</span>
             <span className="block truncate text-sm font-medium">name@flowbite.com</span>
@@ -38,8 +58,15 @@ export default function NavMenu() {
         <Navbar.Link href="#">Pricing</Navbar.Link>
         <Navbar.Link href="#">Contact</Navbar.Link>
       </Navbar.Collapse>
+
     </Navbar>
   )
 }
+
+
+
+
+export default NavMenu;
+
 
 
