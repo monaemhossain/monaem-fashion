@@ -1,4 +1,5 @@
-const AddProduct = () => {
+
+const Blog = () => {
     return (
         <div>
             
@@ -6,4 +7,4 @@ const AddProduct = () => {
     );
 };
 
-export default AddProduct;
+export default Blog;

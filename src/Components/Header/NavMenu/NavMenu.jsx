@@ -2,20 +2,30 @@
 
 import { Dropdown, Navbar, Avatar, DarkThemeToggle, Flowbite } from 'flowbite-react';
 import { } from "flowbite-react";
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { AuthProvider } from '../../../Context/AuthContext';
 
 
 const NavMenu = () => {
   const [toggleLogo, setToggleLogo] = useState(false);
 
-  const handleDarkMode = () => {   
-      setToggleLogo((current) => !current)
+  const { user, signOutUser } = useContext(AuthProvider)
+
+  // console.log(user.photoURL);
+  const handleDarkMode = () => {
+    setToggleLogo((current) => !current)
+  }
+  const handleSignOut = (e) => {
+    // e.preventDefault()
+    signOutUser()
+      .then(succ => console.log(succ))
+      .catch(error => console.log(error))
   }
 
   return (
     <Navbar fluid className='dark:bg-darkTheme dark:text-white'>
-      <Navbar.Brand href="/">        
+      <Navbar.Brand href="/">
         {
           toggleLogo ? <img src="/monaem-light.svg" className="mr-3 h-6 sm:h-9" alt="monaem Logo" /> : <img src="/monaem-dark.svg" className="mr-3 h-6 sm:h-9" alt="monaem Logo" />
         }
@@ -29,24 +39,31 @@ const NavMenu = () => {
             <DarkThemeToggle className='mr-2' />
           </Flowbite>
         </div>
-        <Dropdown
-          arrowIcon={false}
-          inline
-          label={
-            <Avatar alt="User settings" img="https://flowbite.com/docs/images/people/profile-picture-5.jpg" rounded />
-          }
-        >
+        {
+          user ?
+            <Dropdown
+              arrowIcon={false}
+              inline
+              label={
+                <Avatar alt="User settings" img={user?.photoURL} rounded />
+              }
+            >
 
-          <Dropdown.Header>
-            <span className="block text-sm">Bonnie Green</span>
-            <span className="block truncate text-sm font-medium">name@flowbite.com</span>
-          </Dropdown.Header>
-          <Dropdown.Item>Dashboard</Dropdown.Item>
-          <Dropdown.Item>Settings</Dropdown.Item>
-          <Dropdown.Item>Earnings</Dropdown.Item>
-          <Dropdown.Divider />
-          <Dropdown.Item>Sign out</Dropdown.Item>
-        </Dropdown>
+              <Dropdown.Header>
+                <span className="block text-sm">{user?.displayName}</span>
+                <span className="block truncate text-sm font-medium">{user.email}</span>
+              </Dropdown.Header>
+
+              <Dropdown.Divider />
+              <Dropdown.Item onClick={handleSignOut}>Sign out</Dropdown.Item>
+            </Dropdown>
+            :
+            <div className='grid justify-center items-center'>
+
+              <NavLink to="/sign-in" className='font-semibold'>Sign In</NavLink>
+
+            </div>
+        }
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>
@@ -56,15 +73,12 @@ const NavMenu = () => {
         <NavLink to="/contact">Contact</NavLink>
         <NavLink to="/my-cart">My Cart</NavLink>
         <NavLink to="/add-product">Add Product</NavLink>
-        <NavLink to="/sign-in">Sign In</NavLink>
+
       </Navbar.Collapse>
 
     </Navbar>
   )
 }
-
-
-
 
 export default NavMenu;
 
