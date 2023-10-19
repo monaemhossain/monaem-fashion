@@ -1,9 +1,9 @@
-import { Alert } from "@mui/material";
 import { Button, Label, TextInput } from "flowbite-react";
-import { NavLink } from "react-router-dom";
+import { Alert } from '@mui/material';
+import { useState } from "react";
 
 const AddProduct = () => {
-    // const [successMsg, setSuccessMsg] = useState('')
+    const [addedSuccess, setAddedSuccess] = useState('')
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -25,16 +25,23 @@ const AddProduct = () => {
             body: JSON.stringify(newProduct)
         })
         .then(res => res.json())
-        .then(data => {console.log(data)})
+        .then(() => {
+            setAddedSuccess(`${productName} added successfully`)
+        })
+        // reset form
+        
     }
 
 
     return (
         <section className='max-w-lg mx-auto md:py-30 py-20'>
             <div className='mb-5'>
+                {addedSuccess ? <Alert severity="success">{addedSuccess}</Alert> : ''}
+            </div>
+            <div className='mb-5'>
                 {/* {successMsg ? <Alert severity="success">{successMsg}</Alert> : ''} */}
             </div>
-            <form className="flex max-w-lg flex-col gap-4" onSubmit={handleSubmit}>
+            <form className="flex max-w-lg flex-col gap-4" onSubmit={handleSubmit} name="add-product">
                 <div>
                     <div className="mb-2 block">
                         <Label
@@ -118,10 +125,6 @@ const AddProduct = () => {
                 <Button type="submit" className='dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-black text-black border-2 border-black hover:bg-darkTheme hover:text-white transition-all'>
                     Add Product
                 </Button>
-
-                <div className="grid justify-end">
-                    <p>Already Have Account? <NavLink to='/sign-in' className='text-blue-500'>Sign In Here</NavLink></p>
-                </div>
             </form>
         </section>
 

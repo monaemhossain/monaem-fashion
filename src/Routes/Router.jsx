@@ -5,9 +5,9 @@ import Shop from "../Pages/Shop/Shop";
 import NotFound from "../Pages/NotFound/NotFound";
 import SignIn from "../Pages/SignIn/SignIn";
 import SignUp from "../Pages/SignUp/SignUp";
-import SignedIn from "../Components/PrivateRoutes/SignedIn";
+import SignedIn from "./PrivateRoutes/SignedIn";
 import AddProduct from "../Pages/AddProduct/AddProduct";
-import PrivateRoute from "../Components/PrivateRoutes/PrivateRoute";
+import PrivateRoute from "./PrivateRoutes/PrivateRoute";
 import Blog from "../Pages/Blog/Blog";
 
 const Routes = createBrowserRouter([

@@ -12,11 +12,11 @@ const NavMenu = () => {
 
   const { user, signOutUser } = useContext(AuthProvider)
 
-  // console.log(user.photoURL);
+  // console.log(user.displayName);
   const handleDarkMode = () => {
     setToggleLogo((current) => !current)
   }
-  const handleSignOut = (e) => {
+  const handleSignOut = () => {
     // e.preventDefault()
     signOutUser()
       .then(succ => console.log(succ))

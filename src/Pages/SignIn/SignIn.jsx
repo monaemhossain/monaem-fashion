@@ -5,11 +5,12 @@
 import { Button, Label, TextInput } from 'flowbite-react';
 import { useContext } from 'react';
 import { AuthProvider } from '../../Context/AuthContext';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 
 export default function SignIn() {
     const { signInUser } = useContext(AuthProvider);
-
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -17,8 +18,9 @@ export default function SignIn() {
         const password = e.target.password.value;
 
         signInUser(email, password)
-            .then((newUser) => {
-                console.log(newUser.user)
+            .then((user) => {
+                console.log(user.user);
+                navigate(location?.state?location.state : '/');
             })
             .catch(error => {
                 console.log(error)

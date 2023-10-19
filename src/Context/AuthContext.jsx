@@ -10,10 +10,12 @@ const AuthContext = ({children}) => {
     const [loader, setLoader] = useState(true)
 
     const createUser = ( email, password ) => {
+        setLoader(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
     const signInUser = ( email, password ) => {
+        setLoader(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
 
@@ -21,7 +23,7 @@ const AuthContext = ({children}) => {
         const unSubscribe = onAuthStateChanged(auth, (isUser) => {
             setUser(isUser)
             if (isUser) {
-                setLoader(false )
+                setLoader(false)
                 console.log("user logged in");
 
             } else {
@@ -34,6 +36,7 @@ const AuthContext = ({children}) => {
     }, [])
 
     const signOutUser = () => {
+        setLoader(true)
         return signOut(auth)
     }
 
