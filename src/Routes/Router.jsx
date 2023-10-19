@@ -3,6 +3,7 @@ import Root from "./Root";
 import Home from "../Pages/Home/Home";
 import Shop from "../Pages/Shop/Shop";
 import NotFound from "../Pages/NotFound/NotFound";
+import Login from "../Pages/Login/Login";
 
   const Routes = createBrowserRouter([
     {
@@ -17,8 +18,12 @@ import NotFound from "../Pages/NotFound/NotFound";
         {
           path: '/shop',
           element: <Shop></Shop>
+        },
+        {
+          path: '/login',
+          element: <Login></Login>
         }
-      ]
+        ]
     },
   ]);
 

@@ -57,6 +57,7 @@ const NavMenu = () => {
         <NavLink to="/contact">Contact</NavLink>
         <NavLink to="/my-cart">My Cart</NavLink>
         <NavLink to="/add-product">Add Product</NavLink>
+        <NavLink to="/login">Login</NavLink>
       </Navbar.Collapse>
 
     </Navbar>

@@ -11,8 +11,7 @@ const SiteFooter = () => {
             <Footer.Brand
               alt="Flowbite Logo"
               href="https://flowbite.com"
-              name="Flowbite"
-              src="https://flowbite.com/docs/images/logo.svg"
+              src="/monaem-dark.svg"
             />
           </div>
           <div className="grid grid-cols-2 gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6">
