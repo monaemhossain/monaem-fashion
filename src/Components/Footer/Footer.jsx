@@ -3,15 +3,18 @@ import { Footer } from 'flowbite-react';
 // import { BsDribble, BsFacebook, BsGithub, BsInstagram, BsTwitter } from 'react-icons/bs';
 
 const SiteFooter = () => {
+  const toggleLogo = false;
   return (
-    <Footer container className='rounded-none'>
-      <div className="w-full dark:bg-darkTheme">
-        <div className="grid max-w-screen-xl mx-auto justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
+    <Footer container className='rounded-none border-none max-w-screen-xl mx-auto shadow-none dark:bg-darkTheme'>
+      <div className="w-full bg-transparent">
+        <div className="grid justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
           <div>
             <Footer.Brand
-              alt="Flowbite Logo"
-              href="https://flowbite.com"
-              src="/monaem-dark.svg"
+              alt="Monaem Logo"
+              href="monaem1.web.app"
+              src={
+                toggleLogo ? "/monaem-light.svg" : "/monaem-dark.svg"
+              }
             />
           </div>
           <div className="grid grid-cols-2 gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6">
@@ -51,7 +54,7 @@ const SiteFooter = () => {
           </div>
         </div>
         <Footer.Divider />
-        <div className="w-full sm:flex sm:items-center sm:justify-between">
+        <div className="w-full sm:flex sm:items-center sm:justify-between border-none">
           <Footer.Copyright
             by="Flowbite™"
             href="#"

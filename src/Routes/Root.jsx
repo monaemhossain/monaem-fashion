@@ -4,7 +4,7 @@ import SiteFooter from "../Components/Footer/Footer";
 
 const Root = () => {
     return (
-        <div className="dark:bg-darkTheme dark:brightness-75">
+        <div>
             
             <NavMenu></NavMenu>
             <Outlet></Outlet>

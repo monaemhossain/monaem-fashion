@@ -5,17 +5,16 @@ import { } from "flowbite-react";
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
+
 const NavMenu = () => {
   const [toggleLogo, setToggleLogo] = useState(false);
 
-  const handleDarkMode = () => {
-   
+  const handleDarkMode = () => {   
       setToggleLogo((current) => !current)
-   
-    console.log(toggleLogo);
   }
+
   return (
-    <Navbar fluid>
+    <Navbar fluid className='dark:bg-darkTheme dark:text-white'>
       <Navbar.Brand href="/">        
         {
           toggleLogo ? <img src="/monaem-light.svg" className="mr-3 h-6 sm:h-9" alt="monaem Logo" /> : <img src="/monaem-dark.svg" className="mr-3 h-6 sm:h-9" alt="monaem Logo" />
@@ -57,7 +56,7 @@ const NavMenu = () => {
         <NavLink to="/contact">Contact</NavLink>
         <NavLink to="/my-cart">My Cart</NavLink>
         <NavLink to="/add-product">Add Product</NavLink>
-        <NavLink to="/login">Login</NavLink>
+        <NavLink to="/sign-in">Sign In</NavLink>
       </Navbar.Collapse>
 
     </Navbar>
