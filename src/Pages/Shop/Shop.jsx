@@ -1,7 +1,8 @@
+
 const Shop = () => {
     return (
         <div>
-            shop page
+            
         </div>
     );
 };

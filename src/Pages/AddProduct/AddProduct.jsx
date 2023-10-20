@@ -14,7 +14,7 @@ const AddProduct = () => {
         const productPrice = e.target.productPrice.value;
         const productDescription = e.target.productDescription.value;
         const newProduct = { photo, productName, brandName, productType, productPrice, productDescription }
-        console.log(newProduct);
+        // console.log(newProduct);
 
         // send data to server
         fetch('http://localhost:5000/products', {

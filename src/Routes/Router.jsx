@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "./Root";
 import Home from "../Pages/Home/Home";
-import Shop from "../Pages/Shop/Shop";
+import ShopBrand from "../Components/ShopBrand/ShopBrand";
 import NotFound from "../Pages/NotFound/NotFound";
 import SignIn from "../Pages/SignIn/SignIn";
 import SignUp from "../Pages/SignUp/SignUp";
@@ -9,6 +9,8 @@ import SignedIn from "./PrivateRoutes/SignedIn";
 import AddProduct from "../Pages/AddProduct/AddProduct";
 import PrivateRoute from "./PrivateRoutes/PrivateRoute";
 import Blog from "../Pages/Blog/Blog";
+import ProductDetails from "../Components/Products/ProductDetails";
+import Shop from "../Pages/Shop/Shop";
 
 const Routes = createBrowserRouter([
   {
@@ -18,12 +20,25 @@ const Routes = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home></Home>
+        element: <Home></Home>,
+        loader: () => fetch('http://localhost:5000/products')
       },
       {
         path: '/shop',
         element: <PrivateRoute>
           <Shop></Shop>
+        </PrivateRoute>
+      },
+      {
+        path: '/shop-brand',
+        element: <PrivateRoute>
+          <ShopBrand></ShopBrand>
+        </PrivateRoute>
+      },
+      {
+        path: '/product-details',
+        element: <PrivateRoute>
+          <ProductDetails></ProductDetails>
         </PrivateRoute>
       },
       {

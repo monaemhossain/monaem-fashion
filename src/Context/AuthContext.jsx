@@ -8,6 +8,7 @@ const AuthContext = ({children}) => {
 
     const [user, setUser] = useState(null)
     const [loader, setLoader] = useState(true)
+    const [data, setData] = useState({})
 
     const createUser = ( email, password ) => {
         setLoader(true)
@@ -40,12 +41,20 @@ const AuthContext = ({children}) => {
         return signOut(auth)
     }
 
+    useEffect(() => {
+        fetch("http://localhost:5000/products")
+        .then(response => response.json())
+            // 4. Setting *dogImage* to the image url that we received from the response above
+        .then(data => setData(data))
+      },[])
+
     const AuthInfo = {
         createUser,
         signInUser,
         user,
         loader,
         signOutUser,
+        data,
     }
     return (
         <AuthProvider.Provider value={AuthInfo}>
