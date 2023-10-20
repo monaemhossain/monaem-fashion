@@ -1,6 +1,5 @@
    
 import { Footer } from 'flowbite-react';
-// import { BsDribble, BsFacebook, BsGithub, BsInstagram, BsTwitter } from 'react-icons/bs';
 
 const SiteFooter = () => {
   const toggleLogo = false;
@@ -22,10 +21,10 @@ const SiteFooter = () => {
               <Footer.Title title="about" />
               <Footer.LinkGroup col>
                 <Footer.Link href="#">
-                  Flowbite
+                  Monaem
                 </Footer.Link>
                 <Footer.Link href="#">
-                  Tailwind CSS
+                  Facebook
                 </Footer.Link>
               </Footer.LinkGroup>
             </div>
@@ -56,29 +55,11 @@ const SiteFooter = () => {
         <Footer.Divider />
         <div className="w-full sm:flex sm:items-center sm:justify-between border-none">
           <Footer.Copyright
-            by="Flowbite™"
+            by="Monaem"
             href="#"
-            year={2022}
+            year={2023}
           />
-          {/* <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
-            <Footer.Icon
-              href="#"
-              icon={BsFacebook}
-            />
-            <Footer.Icon
-              href="#"
-              icon={BsInstagram}
-            />
-            <Footer.Icon
-              href="#"
-              icon={BsTwitter}
-            />
-            <Footer.Icon
-              href="#"
-              icon={BsGithub}
-            />
-            
-          </div> */}
+          
         </div>
       </div>
     </Footer>
