@@ -11,6 +11,8 @@ import PrivateRoute from "./PrivateRoutes/PrivateRoute";
 import Blog from "../Pages/Blog/Blog";
 import ProductDetails from "../Components/Products/ProductDetails";
 import Shop from "../Pages/Shop/Shop";
+import UpdateProduct from "../Components/UpdateProduct/UpdateProduct";
+import MyCart from "../Pages/MyCart/MyCart";
 
 const Routes = createBrowserRouter([
   {
@@ -21,13 +23,15 @@ const Routes = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/products')
+        loader: () => fetch('https://b8a10-brandshop-server-side-monaemhossain.vercel.app/products')
       },
       {
         path: '/shop',
-        element: <PrivateRoute>
-          <Shop></Shop>
-        </PrivateRoute>
+        element: <Shop></Shop>                
+      },
+      {
+        path: '/my-cart',
+        element: <PrivateRoute><MyCart></MyCart></PrivateRoute>                
       },
       {
         path: '/shop-brand',
@@ -43,14 +47,18 @@ const Routes = createBrowserRouter([
       },
       {
         path: '/blog',
-        element: <PrivateRoute>
-          <Blog></Blog>
-        </PrivateRoute>
+        element: <Blog></Blog>
       },
       {
         path: '/add-product',
         element: <PrivateRoute>
           <AddProduct></AddProduct>
+        </PrivateRoute>
+      },
+      {
+        path: '/update-product',
+        element: <PrivateRoute>
+          <UpdateProduct></UpdateProduct>
         </PrivateRoute>
       },
       {

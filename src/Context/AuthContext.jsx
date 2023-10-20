@@ -42,7 +42,7 @@ const AuthContext = ({children}) => {
     }
 
     useEffect(() => {
-        fetch("http://localhost:5000/products")
+        fetch("https://b8a10-brandshop-server-side-monaemhossain.vercel.app/products")
         .then(response => response.json())
             // 4. Setting *dogImage* to the image url that we received from the response above
         .then(data => setData(data))

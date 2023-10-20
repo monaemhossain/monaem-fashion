@@ -70,7 +70,6 @@ const NavMenu = () => {
         <NavLink to="/">Home</NavLink>
         <NavLink to="/shop">Shop</NavLink>
         <NavLink to="/blog">Blog</NavLink>
-        <NavLink to="/contact">Contact</NavLink>
         <NavLink to="/my-cart">My Cart</NavLink>
         <NavLink to="/add-product">Add Product</NavLink>
 

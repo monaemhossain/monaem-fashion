@@ -1,8 +1,10 @@
-# React + Vite
+# [MONAEM FASHION](https:monaem1.web.app)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Here are some of the cool features of our web site
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* Have dynamic, responsive nav menu for mobile also.
+* Can add product dynamically to the server
+* can update products
+* user can log in with email or password
+* user can log in with google
+* user can toggle between light mode and dark mode

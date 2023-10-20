@@ -4,6 +4,7 @@ import Products from "../../Components/Products/Products";
 // import ForHim from "../../Components/ForHim/ForHim";
 import Banner from "../../Components/Header/Banner/Banner";
 import NewArrivals from "../../Components/NewArrivals/NewArrivals";
+import ContactForm from "../../Components/ContactForm/ContactForm";
 
 const Home = () => {
 
@@ -16,6 +17,7 @@ const Home = () => {
             <Brands productData={productData}></Brands>
             <Products productData={productData}></Products>
             <NewArrivals></NewArrivals>
+            <ContactForm></ContactForm>
         </div>
     );
 };
