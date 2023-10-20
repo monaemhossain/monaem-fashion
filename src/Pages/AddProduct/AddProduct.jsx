@@ -1,9 +1,8 @@
 import { Button, Label, TextInput } from "flowbite-react";
-import { Alert } from '@mui/material';
-import { useState } from "react";
+
+import toast, { Toaster } from "react-hot-toast";
 
 const AddProduct = () => {
-    const [addedSuccess, setAddedSuccess] = useState('')
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -24,24 +23,29 @@ const AddProduct = () => {
             },
             body: JSON.stringify(newProduct)
         })
-        .then(res => res.json())
-        .then(() => {
-            setAddedSuccess(`${productName} added successfully`)
-        })
-        // reset form
-        
+            .then(res => res.json())
+            .then(() => {
+                toast.success(`${productName} added successfully`)
+            })
+            document.addProductForm.reset();
     }
-
+    const clearField = () => {
+        // reset form
+        setTimeout(3000)
+        // document.addProductForm.submit();
+        document.addProductForm.reset();
+        return;
+    }
 
     return (
         <section className='max-w-lg mx-auto md:py-30 py-20'>
             <div className='mb-5'>
-                {addedSuccess ? <Alert severity="success">{addedSuccess}</Alert> : ''}
+                {/* {addedSuccess ? toast(addedSuccess) : ''} */}
             </div>
             <div className='mb-5'>
                 {/* {successMsg ? <Alert severity="success">{successMsg}</Alert> : ''} */}
             </div>
-            <form className="flex max-w-lg flex-col gap-4" onSubmit={handleSubmit} name="add-product">
+            <form className="flex max-w-lg flex-col gap-4" onSubmit={handleSubmit} name="addProductForm">
                 <div>
                     <div className="mb-2 block">
                         <Label
@@ -122,10 +126,16 @@ const AddProduct = () => {
 
                 </div>
 
-                <Button type="submit" className='dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-black text-black border-2 border-black hover:bg-darkTheme hover:text-white transition-all'>
-                    Add Product
-                </Button>
+                <div className="flex gap-4">
+                    <Button onClick={clearField} className='dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-black text-black border-2 border-black hover:bg-red-300 hover:text-black transition-all w-full'>
+                        Add Another
+                    </Button>
+                    <Button type="submit" className='dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-black text-black border-2 border-black hover:bg-darkTheme hover:text-white transition-all w-full'>
+                        Add Product
+                    </Button>
+                </div>
             </form>
+            <Toaster />
         </section>
 
     );
