@@ -23,7 +23,7 @@ const Routes = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch('https://b8a10-brandshop-server-side-monaemhossain.vercel.app/products')
+        loader: () => fetch('https://monaem-backend.vercel.app/products')
       },
       {
         path: '/shop',

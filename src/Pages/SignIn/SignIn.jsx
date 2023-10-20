@@ -62,6 +62,7 @@ export default function SignIn() {
                 <Button type="submit" className='dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-black text-black border-2 border-black hover:bg-darkTheme hover:text-white transition-all'>
                     Sign in
                 </Button>
+                
                 <div className="grid justify-end">
                     <p className='text-right'>Already Have Account? <NavLink to='/sign-up' className='text-blue-500'>Sign Up Here</NavLink></p>
                 </div>

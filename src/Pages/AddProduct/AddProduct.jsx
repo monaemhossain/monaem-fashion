@@ -16,7 +16,7 @@ const AddProduct = () => {
         // console.log(newProduct);
 
         // send data to server
-        fetch('http://localhost:5000/products', {
+        fetch('https://monaem-backend.vercel.app/products', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
