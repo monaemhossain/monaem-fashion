@@ -42,9 +42,8 @@ const AuthContext = ({children}) => {
     }
 
     useEffect(() => {
-        fetch("https://monaem-backend.vercel.app/products")
+        fetch("http://localhost:5000/products")
         .then(response => response.json())
-            // 4. Setting *dogImage* to the image url that we received from the response above
         .then(data => setData(data))
       },[])
 

@@ -1,6 +1,3 @@
-
-'use client';
-
 import { Button, Label, TextInput, } from 'flowbite-react';
 import { Alert } from '@mui/material';
 import { useContext, useState } from 'react';

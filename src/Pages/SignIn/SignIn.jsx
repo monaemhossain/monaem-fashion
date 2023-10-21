@@ -1,7 +1,3 @@
-
-'use client';
-
-
 import { Button, Label, TextInput } from 'flowbite-react';
 import { useContext } from 'react';
 import { AuthProvider } from '../../Context/AuthContext';

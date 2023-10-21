@@ -1,5 +1,3 @@
-'use client';
-
 import { Dropdown, Navbar, Avatar, DarkThemeToggle, Flowbite } from 'flowbite-react';
 import { } from "flowbite-react";
 import { useContext, useState } from 'react';

@@ -12,10 +12,10 @@ const Products = ({productData}) => {
             </div>
 
 
-            <div className="col-span-2 grid grid-cols-3">
+            <div className="col-span-2 grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 mx-auto">
 
                 {
-                    productData?.slice(productData.length-6,productData.length).map(data => <ProductCard key={data._id} data={data}></ProductCard>)
+                    productData&&productData?.slice(productData.length-6,productData.length).map(data => <ProductCard key={data._id} data={data}></ProductCard>)
                 }
 
             </div>

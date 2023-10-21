@@ -1,6 +1,6 @@
 const ContactForm = () => {
     return (
-        <div className="max-w-screen-sm mx-auto py-10">
+        <div className="max-w-screen-sm mx-auto py-10 px-4">
             <form action="#" className="mb-6">
                 <div className="mb-6">
                     <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
