@@ -14,7 +14,7 @@ const ProductCard = ({ data }) => {
 
     return (
 
-        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 ">
+        <div className="lg:max-w-sm mx-auto bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 ">
             <div className="grid items-center justify-center px-2" >
                 <img className="rounded-t-lg w-full h-56 object-contain" src={photo} alt={brandName + ' image'} />
             </div>

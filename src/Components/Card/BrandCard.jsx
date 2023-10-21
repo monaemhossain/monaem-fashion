@@ -6,7 +6,7 @@ const BrandCard = ({data}) => {
     const navigate = useNavigate()
     const handleSingleBrand = (data) => {
         navigate('/shop-brand', { state: { data } })
-        console.log(data);
+        // console.log(data);
     }
     return (
         <div

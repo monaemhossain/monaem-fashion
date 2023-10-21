@@ -7,7 +7,7 @@ const Shop = () => {
     // const {data} = useContext(AuthProvider)
     const data = useLoaderData()
     return (
-        <div className="max-w-screen-xl mx-auto grid grid-cols-4">
+        <div className="max-w-screen-xl mx-auto grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 justify-center items-center">
 
                 {
                    data?.map(data => <ProductCard key={data._id} data={data}></ProductCard>)

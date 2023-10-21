@@ -7,8 +7,8 @@ const ShopBrand = () => {
     const passData = useLocation();
     const brandName = passData.state?.data
     const { data } = useContext(AuthProvider);
-    const brand = data.filter(product => product.brandName.toLowerCase() == brandName.toLowerCase())
-    console.log(brand);
+    const brand = data.filter(product => product.brandName.toLowerCase() === brandName.toLowerCase())
+    // console.log(brand);
 
     return (
 
