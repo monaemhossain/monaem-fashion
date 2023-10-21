@@ -2,7 +2,7 @@ import { Button, Label, TextInput } from 'flowbite-react';
 import { useContext } from 'react';
 import { AuthProvider } from '../../Context/AuthContext';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
-import toast, {  Toaster } from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 import { Divider } from '@mui/material';
 
 export default function SignIn() {
@@ -16,7 +16,7 @@ export default function SignIn() {
         const password = e.target.password.value;
 
         signInUser(email, password)
-            .then(() => {   
+            .then(() => {
                 toast.success("Successfully logged in with email and password")
                 navigate(location?.state ? location.state : '/');
             })
@@ -25,7 +25,25 @@ export default function SignIn() {
     const handleGoogleLogin = (e) => {
         e.preventDefault()
         signInWithGoogle()
-            .then(() => toast.success("Successfully logged in with Google"))
+            .then((googleUser) => {
+                const user = googleUser.user
+                const email = user.email;
+                const name = user.displayName
+                const createdAt = user?.metadata?.creationTime
+                const setUserToDB = { email, name, createdAt }
+                fetch('https://monaem-backend.vercel.app/users', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(setUserToDB)
+                })
+                    .then(res => res.json())
+                    .then(() => {
+                        toast.success(`${email} added successfully`)
+                    })
+                toast.success("Successfully logged in with Google")
+            })
             .catch(() => toast.error("Something went wrong"))
     }
 

@@ -12,7 +12,9 @@ const AddProduct = () => {
         const productType = e.target.productType.value;
         const productPrice = e.target.productPrice.value;
         const productDescription = e.target.productDescription.value;
-        const newProduct = { photo, productName, brandName, productType, productPrice, productDescription }
+        const productRating = e.target.productRating.value;
+        console.log(productRating);
+        const newProduct = { photo, productName, brandName, productType, productPrice, productDescription, productRating }
         // console.log(newProduct);
 
         // send data to server
@@ -27,13 +29,13 @@ const AddProduct = () => {
             .then(() => {
                 toast.success(`${productName} added successfully`)
             })
-            document.addProductForm.reset();
+        document.addProductForm.reset();
     }
 
     return (
         <section className='max-w-lg mx-auto md:py-30 py-20'>
             <div className='mb-10 text-center'>
-               <h1 className="text-4xl font-semibold">Add new product</h1>
+                <h1 className="text-4xl font-semibold">Add new product</h1>
             </div>
             <form className="flex max-w-lg flex-col gap-4" onSubmit={handleSubmit} name="addProductForm">
                 <div>
@@ -95,19 +97,34 @@ const AddProduct = () => {
                         type="text"
                     />
                 </div>
-                <div>
-                    <div className="mb-2 block">
-                        <Label
-                            htmlFor="productPrice"
-                            value="Product price"
+                <div className="grid grid-cols-2 justify-center items-center gap-4">
+                    <div>
+                        <div className="mb-2 block">
+                            <Label
+                                htmlFor="productPrice"
+                                value="Product price"
+                            />
+                        </div>
+                        <TextInput
+                            id="productPrice"
+                            required
+                            type="number"
+                            placeholder="$220"
                         />
                     </div>
-                    <TextInput
-                        id="productPrice"
-                        required
-                        type="number"
-                        placeholder="$220"
-                    />
+                    <div>
+
+                        <label htmlFor="productRating" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an option</label>
+                        <select id="productRating" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option selected>Choose a country</option>
+                            <option value="1">One Star</option>
+                            <option value="2">Two Star</option>
+                            <option value="3">Three Star</option>
+                            <option value="4">Four Star</option>
+                            <option value="5">Five Star</option>
+                        </select>
+
+                    </div>
                 </div>
                 <div>
 
