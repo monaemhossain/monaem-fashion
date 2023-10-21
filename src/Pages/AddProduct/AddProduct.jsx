@@ -97,7 +97,7 @@ const AddProduct = () => {
                         type="text"
                     />
                 </div>
-                <div className="grid grid-cols-2 justify-center items-center gap-4">
+                <div className="grid md:grid-cols-2 justify-center items-center gap-4">
                     <div>
                         <div className="mb-2 block">
                             <Label
@@ -112,11 +112,13 @@ const AddProduct = () => {
                             placeholder="$220"
                         />
                     </div>
-                    <div>
+                    <div className="mt-1">
 
-                        <label htmlFor="productRating" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an option</label>
-                        <select id="productRating" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                            <option selected>Choose a country</option>
+                        <label htmlFor="productRating" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product rating</label>
+                        <select id="productRating" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            defaultValue={parseInt('0')}
+                        >
+                            <option value='0'>None</option>
                             <option value="1">One Star</option>
                             <option value="2">Two Star</option>
                             <option value="3">Three Star</option>

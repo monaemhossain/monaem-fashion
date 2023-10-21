@@ -61,7 +61,7 @@ const Routes = createBrowserRouter([
         element: <PrivateRoute>
           <UpdateProduct></UpdateProduct>
         </PrivateRoute>,
-        loader: ({params}) => fetch(`https://monaem-backend.vercel.app/${params.id}`)
+        loader: ({params}) => fetch(`https://monaem-backend.vercel.app/products/${params.id}`)
       },
       {
         path: '/sign-in',

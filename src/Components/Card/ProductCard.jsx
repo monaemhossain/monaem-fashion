@@ -29,7 +29,7 @@ const ProductCard = ({ data }) => {
                     <div className="flex justify-between items-center">
                         <p>Price: {productPrice}$</p>
 
-                        <Rating name="read-only" value={productRating} readOnly />
+                        <Rating name="read-only" value={parseInt(productRating)} readOnly />
 
                     </div>
 

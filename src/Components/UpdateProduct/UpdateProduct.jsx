@@ -15,7 +15,8 @@ const UpdateProduct = () => {
         const productType = e.target.productType.value;
         const productPrice = e.target.productPrice.value;
         const productDescription = e.target.productDescription.value;
-        const newProduct = { photo, productName, brandName, productType, productPrice, productDescription }
+        const productRating = e.target.productRating.value;
+        const newProduct = { photo, productName, brandName, productType, productPrice, productDescription, productRating }
         // console.log(newProduct);
 
         // send data to server
@@ -104,20 +105,37 @@ const UpdateProduct = () => {
                         defaultValue={productType}
                     />
                 </div>
-                <div>
-                    <div className="mb-2 block">
-                        <Label
-                            htmlFor="productPrice"
-                            defaultValue="Product price"
+                <div className="grid md:grid-cols-2 justify-center items-center gap-4">
+                    <div>
+                        <div className="mb-2 block">
+                            <Label
+                                htmlFor="productPrice"
+                                value="Product price"
+                            />
+                        </div>
+                        <TextInput
+                            id="productPrice"
+                            required
+                            type="number"
+                            placeholder="$220"
+                            defaultValue={productPrice}
                         />
                     </div>
-                    <TextInput
-                        id="productPrice"
-                        required
-                        type="number"
-                        placeholder="$220"
-                        defaultValue={productPrice}
-                    />
+                    <div className="mt-1">
+
+                        <label htmlFor="productRating" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product rating</label>
+                        <select id="productRating" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                             defaultValue={parseInt('0')}
+                        >
+                            <option value={parseInt('0')}>None</option>
+                            <option value={parseInt("1")}>One Star</option>
+                            <option value={parseInt("2")}>Two Star</option>
+                            <option value={parseInt("3")}>Three Star</option>
+                            <option value={parseInt("4")}>Four Star</option>
+                            <option value={parseInt("5")}>Five Star</option>
+                        </select>
+
+                    </div>
                 </div>
                 <div>
 
