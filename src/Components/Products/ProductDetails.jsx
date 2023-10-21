@@ -7,7 +7,7 @@ const ProductDetails = () => {
     const { photo, productName, brandName, productDescription, productType, productPrice } = data;
     return (
 
-        <div className='max-w-screen-xl mx-auto'>
+        <div className='max-w-screen-lg mx-auto py-16 px-4'>
             <div className="grid md:grid-cols-3 grid-cols-1 gap-6 items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row dark:border-gray-700 dark:bg-gray-800 px-5 py-20">
                 <div className='col-span-1'>
                     <img className="object-cover w-full rounded-t-lg md:h-auto md:w-full md:rounded-none md:rounded-l-lg" src={photo} alt="" />

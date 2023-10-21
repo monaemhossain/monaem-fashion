@@ -29,13 +29,6 @@ const AddProduct = () => {
             })
             document.addProductForm.reset();
     }
-    const clearField = () => {
-        // reset form
-        setTimeout(3000)
-        // document.addProductForm.submit();
-        document.addProductForm.reset();
-        return;
-    }
 
     return (
         <section className='max-w-lg mx-auto md:py-30 py-20'>
@@ -127,9 +120,6 @@ const AddProduct = () => {
                 </div>
 
                 <div className="flex gap-4">
-                    <Button onClick={clearField} className='dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-black text-black border-2 border-black hover:bg-red-300 hover:text-black transition-all w-full'>
-                        Add Another
-                    </Button>
                     <Button type="submit" className='dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-black text-black border-2 border-black hover:bg-darkTheme hover:text-white transition-all w-full'>
                         Add Product
                     </Button>

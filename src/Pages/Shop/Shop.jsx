@@ -10,7 +10,7 @@ const Shop = () => {
         <div className="max-w-screen-xl mx-auto grid grid-cols-4">
 
                 {
-                   data && data?.map(data => <ProductCard key={data._id} data={data}></ProductCard>)
+                   data?.map(data => <ProductCard key={data._id} data={data}></ProductCard>)
                 }
 
             </div>

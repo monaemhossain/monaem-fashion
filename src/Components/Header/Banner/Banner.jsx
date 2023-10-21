@@ -2,11 +2,11 @@
 const Banner = () => {
   return (
 
-    <section className="bg-center bg- bg-[url('https://cdn.pixabay.com/photo/2018/05/06/03/39/woman-3377839_1280.jpg')] bg-gray-700">
+    <section className="bg-center bg- bg-[url('https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-gray-700">
       <div className="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
         <div className="col-span-2">
-          <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">We invest in the world’s potential</h1>
-          <p className="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
+          <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">Elevate Your Style: Unleash the Latest Trends</h1>
+          <p className="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">Indulge in a world of limitless style possibilities. Our curated collection brings you the latest trends, timeless classics, and everything in between. Elevate your wardrobe with pieces that speak to your unique style.</p>
           <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
             <a href="#" className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
               Get started

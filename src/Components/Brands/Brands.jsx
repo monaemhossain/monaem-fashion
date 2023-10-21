@@ -2,12 +2,13 @@ import { PropTypes } from "prop-types";
 import BrandCard from "../Card/BrandCard";
 
 const Brands = ({ productData }) => {
-// console.log(productData);
+const brandNameList = [...new Set(productData.map(product => product.brandName))]
+console.log(brandNameList);
 productData
     return (
-        <div className="max-w-screen-xl mx-auto grid md:grid-cols-4 grid-cols-2 justify-between my-10 pt-10">
+        <div className="max-w-screen-xl mx-auto grid lg:grid-cols-6 md:grid-cols-3 grid-cols-2 justify-between my-10 pt-10">
             {
-                productData?.slice(0,4).map(product => <BrandCard key={product._id} data={product}></BrandCard>)
+                brandNameList?.slice(0,6).map((product, index) => <BrandCard key={brandNameList.length-index} data={product}></BrandCard>)
             }
         </div>
     );

@@ -65,12 +65,27 @@ const NavMenu = () => {
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/shop">Shop</NavLink>
-        <NavLink to="/blog">Blog</NavLink>
-        <NavLink to="/my-cart">My Cart</NavLink>
-        <NavLink to="/add-product">Add Product</NavLink>
-
+        <NavLink to="/"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "text-blue-500" : ""
+          }>Home</NavLink>
+        <NavLink to="/shop"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "text-blue-500" : ""
+          }>Shop</NavLink>
+        <NavLink to="/blog"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "text-blue-500" : ""
+          }>Blog</NavLink>
+        <NavLink to="/my-cart"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "text-blue-500" : ""
+          }>My Cart</NavLink>
+        <NavLink to="/add-product"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "text-blue-500" : ""
+          }>Add Product</NavLink>
+        
       </Navbar.Collapse>
 
     </Navbar>

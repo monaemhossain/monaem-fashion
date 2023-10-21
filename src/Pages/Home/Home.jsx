@@ -14,8 +14,8 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <Brands productData={productData&&productData}></Brands>
-            <Products productData={productData&&productData}></Products>
+            <Brands productData={productData}></Brands>
+            <Products productData={productData}></Products>
             <NewArrivals></NewArrivals>
             <ContactForm></ContactForm>
         </div>

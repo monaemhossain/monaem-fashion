@@ -7,7 +7,7 @@ const SiteFooter = () => {
     <Footer container className='rounded-none border-none max-w-screen-xl mx-auto shadow-none dark:bg-darkTheme'>
       <div className="w-full bg-transparent">
         <div className="grid justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
-          <div>
+          <div className='grid items-center'>
             <Footer.Brand
               alt="Monaem Logo"
               href="monaem1.web.app"

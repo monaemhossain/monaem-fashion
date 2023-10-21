@@ -5,9 +5,9 @@ import ProductCard from "../Card/ProductCard";
 
 const ShopBrand = () => {
     const passData = useLocation();
-    const brandData = passData.state?.data
+    const brandName = passData.state?.data
     const { data } = useContext(AuthProvider);
-    const brand = data.filter(product => product.brandName == brandData.brandName)
+    const brand = data.filter(product => product.brandName.toLowerCase() == brandName.toLowerCase())
     console.log(brand);
 
     return (
