@@ -26,8 +26,8 @@ const ProductCard = ({ data }) => {
                     <h5 className="mb-2 text-base font-medium tracking-tight text-gray-600 dark:text-white">{productType}</h5>
                 </div>
                 <div>
-                    <div className="flex justify-between items-center">
-                        <p>Price: {productPrice}$</p>
+                    <div className="flex justify-between items-center dark:text-white">
+                        <p className="dark:text-white">Price: {productPrice}$</p>
 
                         <Rating name="read-only" value={parseInt(productRating)} readOnly />
 

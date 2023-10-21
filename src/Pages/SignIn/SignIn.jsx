@@ -82,7 +82,7 @@ export default function SignIn() {
                 <Button type="submit" className='dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-black text-black border-2 border-black hover:bg-darkTheme hover:text-white transition-all'>
                     Sign in
                 </Button>
-                <Divider>or</Divider>
+                <Divider className='dark:text-white'>or</Divider>
                 <div className='grid justify-center items-center'>
                     <button onClick={handleGoogleLogin}>
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">
@@ -92,7 +92,7 @@ export default function SignIn() {
                 </div>
                 <div className="grid justify-center">
 
-                    <p className='text-right'>Already Have Account? <NavLink to='/sign-up' className='text-blue-500'>Sign Up Here</NavLink></p>
+                    <p className='text-right dark:text-white'>Already Have Account? <NavLink to='/sign-up' className='text-blue-500'>Sign Up Here</NavLink></p>
                 </div>
             </form>
             <Toaster />
