@@ -57,10 +57,11 @@ const Routes = createBrowserRouter([
         </PrivateRoute>
       },
       {
-        path: '/update-product',
+        path: '/update-product/:id',
         element: <PrivateRoute>
           <UpdateProduct></UpdateProduct>
-        </PrivateRoute>
+        </PrivateRoute>,
+        loader: ({params}) => fetch(`http://localhost:5000/products/${params.id}`)
       },
       {
         path: '/sign-in',

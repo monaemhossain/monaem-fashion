@@ -1,15 +1,16 @@
 import { PropTypes } from "prop-types";
 import { useNavigate } from "react-router-dom";
 const ProductCard = ({ data }) => {
-    const { brandName, productName, productType, photo, productDescription, productPrice } = data;
+    const { _id, brandName, productName, productType, photo, productDescription, productPrice } = data;
 
     const navigate = useNavigate()
 
     const handleViewProduct = (data) => {
         navigate('/product-details', { state: { data } })
     }
-    const handleUpdateProduct = (data) => {
-        navigate('/update-product', { state: { data } })
+    const handleUpdateProduct = (id) => {
+        navigate(`/update-product/${id}`, { state: { data } })
+        console.log(id);
     }
 
     return (
@@ -62,7 +63,7 @@ const ProductCard = ({ data }) => {
                         </svg>
                     </button>
                     <button
-                        onClick={() => handleUpdateProduct(data)}
+                        onClick={() => handleUpdateProduct(_id)}
                         className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                     >
                         Update

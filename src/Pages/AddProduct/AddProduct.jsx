@@ -32,11 +32,8 @@ const AddProduct = () => {
 
     return (
         <section className='max-w-lg mx-auto md:py-30 py-20'>
-            <div className='mb-5'>
-                {/* {addedSuccess ? toast(addedSuccess) : ''} */}
-            </div>
-            <div className='mb-5'>
-                {/* {successMsg ? <Alert severity="success">{successMsg}</Alert> : ''} */}
+            <div className='mb-10 text-center'>
+               <h1 className="text-4xl font-semibold">Add new product</h1>
             </div>
             <form className="flex max-w-lg flex-col gap-4" onSubmit={handleSubmit} name="addProductForm">
                 <div>

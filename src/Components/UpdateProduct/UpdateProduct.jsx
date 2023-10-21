@@ -1,34 +1,26 @@
 import { Button, Label, TextInput } from "flowbite-react";
-
 import toast, { Toaster } from "react-hot-toast";
-import { useLocation } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
+
 
 const UpdateProduct = () => {
-    const passDetails = useLocation();
-    const data = passDetails.state?.data
-    const {_id, photo, productName, brandName, productDescription, productType, productPrice} = data;
-    console.log(_id);
+    const data = useLoaderData();
+    const { _id, photo, productName, brandName, productDescription, productType, productPrice } = data;
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const photo = e.target.photoUrl;
-        const productName = e.target.productName;
-        const brandName = e.target.brandName;
-        const productType = e.target.productType;
-        const productPrice = e.target.productPrice;
-        const productDescription = e.target.productDescription;
+        const photo = e.target.photoUrl.value;
+        const productName = e.target.productName.value;
+        const brandName = e.target.brandName.value;
+        const productType = e.target.productType.value;
+        const productPrice = e.target.productPrice.value;
+        const productDescription = e.target.productDescription.value;
         const newProduct = { photo, productName, brandName, productType, productPrice, productDescription }
-
-        photo.defaultValue = photo
-        productName
-        brandName
-        productType
-        productPrice
         // console.log(newProduct);
-        
+
         // send data to server
-        fetch('https://monaem-backend.vercel.app/products', {
-            method: 'POST',
+        fetch(`http://localhost:5000/products/${_id}`, {
+            method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
@@ -36,26 +28,18 @@ const UpdateProduct = () => {
         })
             .then(res => res.json())
             .then(() => {
-                toast.success(`${productName} added successfully`)
+                toast.success(`${productName} updated successfully`)
             })
-            document.addProductForm.reset();
+        // document.addProductForm.reset();
     }
-    const clearField = () => {
-        // reset form
-        setTimeout(3000)
-        // document.addProductForm.submit();
-        document.addProductForm.reset();
-        return;
-    }
+
 
     return (
         <section className='max-w-lg mx-auto md:py-30 py-20'>
-            <div className='mb-5'>
-                {/* {addedSuccess ? toast(addedSuccess) : ''} */}
+            <div className='mb-10 text-center'>
+                <h1 className="text-4xl font-semibold">Update product</h1>
             </div>
-            <div className='mb-5'>
-                {/* {successMsg ? <Alert severity="success">{successMsg}</Alert> : ''} */}
-            </div>
+
             <form className="flex max-w-lg flex-col gap-4" onSubmit={handleSubmit} name="addProductForm">
                 <div>
                     <div className="mb-2 block">
@@ -143,7 +127,7 @@ const UpdateProduct = () => {
                 </div>
 
                 <div className="flex gap-4">
-                    <Button onClick={clearField} className='dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-black text-black border-2 border-black hover:bg-red-300 hover:text-black transition-all w-full'>
+                    <Button type="submit" className='dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-black text-black border-2 border-black hover:bg-red-300 hover:text-black transition-all w-full'>
                         Update Product
                     </Button>
                 </div>
