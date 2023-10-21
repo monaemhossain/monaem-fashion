@@ -16,9 +16,9 @@ const MyCart = () => {
       const userCart = cartItems.filter(data => data.userEmail.toLowerCase() === userEmail);
    
     return (
-        <div className="max-w-screen-lg mx-auto py-10">
+        <div className="max-w-screen-lg mx-auto py-10 grid items-center justify-center">
             {
-                userCart.map(item => <CartCard key={item._id} item={item}></CartCard>)
+                cartItems?userCart.map(item => <CartCard key={item._id} item={item}></CartCard>):<h2 className="text-5xl text-center dark:text-white">Cart is empty</h2>
             }
         </div>
     );
