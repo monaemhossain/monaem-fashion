@@ -7,7 +7,7 @@ const ShopBrand = () => {
     const passData = useLocation();
     const brandName = passData.state?.data
     const { data } = useContext(AuthProvider);
-    const brand = data.filter(product => product.brandName.toLowerCase() === brandName.toLowerCase())
+    const brand = data?.filter(product => product.brandName.toLowerCase() === brandName.toLowerCase())
     // console.log(brand);
 
     return (
@@ -20,7 +20,7 @@ const ShopBrand = () => {
             </div>
             <div className="max-w-screen-xl mx-auto grid grid-cols-4">
                 {
-                    brand.map(product => <ProductCard key={product._id} data={product}></ProductCard>)
+                    brand?.map(product => <ProductCard key={product._id} data={product}></ProductCard>)
                 }
             </div>
         </div>

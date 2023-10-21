@@ -46,7 +46,7 @@ export default function SignUp() {
                 // send data to server
                 const createdAt = newUser.user?.metadata?.creationTime
                 const user = {email, name, createdAt}
-                fetch('https://monaem-backend.vercel.app/products', {
+                fetch('https://monaem-backend.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

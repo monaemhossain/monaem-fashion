@@ -2,7 +2,7 @@ import { PropTypes } from "prop-types";
 import BrandCard from "../Card/BrandCard";
 
 const Brands = ({ productData }) => {
-const brandNameList = [...new Set(productData.map(product => product.brandName))]
+const brandNameList = [...new Set(productData?.map(product => product.brandName))]
 // console.log(productData.photo);
 productData
     return (
