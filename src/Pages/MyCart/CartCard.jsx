@@ -16,7 +16,7 @@ const CartCard = ({ item }) => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/user-cart/${_id}`,{
+                fetch(`https://monaem-backend.vercel.app/user-cart/${_id}`,{
                     method: 'DELETE'
                 })
                     .then(res => res.json())

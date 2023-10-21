@@ -8,7 +8,7 @@ const MyCart = () => {
     const userEmail = user.email.toLowerCase();
     
     useEffect(() => {
-        fetch("http://localhost:5000/user-cart")
+        fetch("https://monaem-backend.vercel.app/user-cart")
         .then(response => response.json())
         .then(data => setCartItems(data))
       },[])
