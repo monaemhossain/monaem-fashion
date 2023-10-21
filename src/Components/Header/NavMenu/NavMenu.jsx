@@ -3,6 +3,7 @@ import { } from "flowbite-react";
 import { useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AuthProvider } from '../../../Context/AuthContext';
+import toast from 'react-hot-toast';
 
 
 const NavMenu = () => {
@@ -17,8 +18,8 @@ const NavMenu = () => {
   const handleSignOut = () => {
     // e.preventDefault()
     signOutUser()
-      .then(succ => console.log(succ))
-      .catch(error => console.log(error))
+      .then(() => toast.success('Successfully signed out'))
+      .catch(() => toast.error("Something went wrong"))
   }
 
   return (
