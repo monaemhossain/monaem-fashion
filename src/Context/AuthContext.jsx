@@ -48,7 +48,7 @@ const AuthContext = ({children}) => {
     }
 
     useEffect(() => {
-        fetch("http://localhost:5000/products")
+        fetch("https://monaem-backend.vercel.app/products")
         .then(response => response.json())
         .then(data => setData(data))
       },[])

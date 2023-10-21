@@ -6,7 +6,8 @@ import { useLocation } from "react-router-dom";
 const UpdateProduct = () => {
     const passDetails = useLocation();
     const data = passDetails.state?.data
-    const {photo, productName, brandName, productDescription, productType, productPrice} = data;
+    const {_id, photo, productName, brandName, productDescription, productType, productPrice} = data;
+    console.log(_id);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -26,7 +27,7 @@ const UpdateProduct = () => {
         // console.log(newProduct);
         
         // send data to server
-        fetch('http://localhost:5000/products', {
+        fetch('https://monaem-backend.vercel.app/products', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

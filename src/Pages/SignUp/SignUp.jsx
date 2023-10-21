@@ -4,6 +4,7 @@ import { useContext, useState } from 'react';
 import { AuthProvider } from '../../Context/AuthContext';
 import { updateProfile } from 'firebase/auth';
 import { NavLink } from 'react-router-dom';
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function SignUp() {
     const { createUser } = useContext(AuthProvider);
@@ -42,6 +43,20 @@ export default function SignUp() {
                     photoURL: photo,
                 })
                 setSuccessMsg(`Hello ${firstName}, You have successfully created your account`);
+                // send data to server
+                const createdAt = newUser.user?.metadata?.creationTime
+                const user = {email, name, createdAt}
+                fetch('https://monaem-backend.vercel.app/products', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(user)
+                })
+                    .then(res => res.json())
+                    .then(() => {
+                        toast.success(`${email} added successfully`)
+                    })
             })
             .catch((error) => {
                 if (error.code == "auth/email-already-in-use") {
@@ -143,6 +158,7 @@ export default function SignUp() {
                     <p>Already Have Account? <NavLink to='/sign-in' className='text-blue-500'>Sign In Here</NavLink></p>
                 </div>
             </form>
+            <Toaster />
         </section>
     )
 }

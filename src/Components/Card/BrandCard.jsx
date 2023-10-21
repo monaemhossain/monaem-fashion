@@ -11,7 +11,7 @@ const BrandCard = ({data}) => {
     return (
         <div
         onClick={() => handleSingleBrand(data)} 
-        className="h-48 w-full flex justify-center items-center border cursor-pointer hover:bg-gray-300 transition-colors">
+        className="h-48 w-full flex justify-center items-center border cursor-pointer dark:text-white dark:hover:bg-gray-700 hover:bg-gray-300 transition-colors">
             <h1 className="text-2xl font-medium uppercase">{data}</h1>
         </div>
     );

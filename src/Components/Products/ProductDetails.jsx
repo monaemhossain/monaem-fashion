@@ -5,6 +5,7 @@ const ProductDetails = () => {
     const passDetails = useLocation();
     const data = passDetails.state?.data
     const { photo, productName, brandName, productDescription, productType, productPrice } = data;
+    
     return (
 
         <div className='max-w-screen-lg mx-auto py-16 px-4'>

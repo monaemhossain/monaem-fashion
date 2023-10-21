@@ -23,12 +23,12 @@ const Routes = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/products')
+        loader: () => fetch('https://monaem-backend.vercel.app/products')
       },
       {
         path: '/shop',
         element: <Shop></Shop>,
-        loader: () => fetch('http://localhost:5000/products')
+        loader: () => fetch('https://monaem-backend.vercel.app/products')
       },
       {
         path: '/my-cart',
